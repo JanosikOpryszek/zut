@@ -1,0 +1,46 @@
+ https://lh3.googleusercontent.com/-Yi_oUN6KqMg/Wng6JXLYYRI/AAAAAAAAAE0/MzajFXXKFckVJaj0ZDf4gj_09SLN2oGwwCL0BGAYYCw/h765/2018-02-05.png
+   na koñcu  /boot/config.txt dopisac::
+
+#CAN bus controllers
+dtoverlay=mcp2515-can0,oscillator=16000000,interrupt=25
+dtoverlay=mcp2515-can1,oscillator=16000000,interrupt=24
+
+dtoverlay=spi-bcm2835
+
+ restart
+
+kazde uruchomienie podnosimy  interface can0:( dopisac w ~ .bashrc )
+
+ip link set up can0 type can bitrate 500000
+
+sprawdzenie, wpiszcie : ifconfig can0
+
+
+testowanie systemowym narzedziem can-utlis
+instalacja:  sudo apt-get install can-utils
+dwysylanie:  cansend can0 001#1122334455667788
+odbieranie:  candump can0
+
+https://lh3.googleusercontent.com/-flKPQgBY2dM/Wng715VaHnI/AAAAAAAAAFQ/1KDGzNrC5XYrUUb7UQaNEROXV0bRcexwwCL0BGAYYCw/h521/2018-02-05.png  
+
+
+ Linki:
+https://en.wikipedia.org/wiki/SocketCAN
+
+http://www.emvn.pl/can-bus-mcp2515-raspberrypi-socketcan/
+
+
+https://www.raspberrypi.org/forums/viewtopic.php?f=44&t=141052&sid=ef23c116bd770853b4250a6d4ce6dc22&start=25
+
+https://vimtut0r.com/2017/01/17/can-bus-with-raspberry-pi-howtoquickstart-mcp2515-kernel-4-4-x/
+
+https://harrisonsand.com/can-on-the-raspberry-pi/
+
+http://chadgibbons.com/2016/01/08/can-bus-hacking-with-the-arduino-and-raspberry-pi/
+
+https://www.instructables.com/id/CAN-Bus-Sniffing-and-Broadcasting-with-Arduino/
+
+https://github.com/linux-can/can-utils
+
+
+
