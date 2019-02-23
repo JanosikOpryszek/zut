@@ -3,7 +3,7 @@ cmake_minimum_required (VERSION 2.6)
 set(CMAKE_AUTOMOC ON)
 
 project (pr)
-SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++98 -Lpthread ")
+SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11 -Lpthread ")
 
 
 # Must use GNUInstallDirs to install libraries into correct locations on all platforms:
